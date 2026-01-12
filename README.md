@@ -95,3 +95,6 @@ apple-notes-chrome-extension/
 └── native-host/
     └── apple_notes_host.py    # Native messaging host
 ```
+
+## Acknowledgements
+Created 100% by Claude Code - One Shot
