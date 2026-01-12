@@ -1,0 +1,9 @@
+{
+  "name": "com.applenotes.chrome",
+  "description": "Native messaging host for Save to Apple Notes Chrome extension",
+  "path": "HOST_PATH",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://EXTENSION_ID/"
+  ]
+}
