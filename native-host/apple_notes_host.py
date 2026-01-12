@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Native messaging host for Save to Apple Notes Chrome extension.
 Receives messages from Chrome and creates notes in Apple Notes via AppleScript.

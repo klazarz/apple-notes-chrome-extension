@@ -1,6 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Save to Apple Notes",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyWfIzrzWGmw6vo6RiypS8Zh9b5rzyXmZ/ZQ57utHGRPA+rhGhI0jQ/JJk7FUp+FpOCV8sd+hj269eVzalgzCFQQR7K1iJtvyGBKSxgV4hkCG/JLWiISDvKHwoBoJS9UaRmTypGwGI5H6s0XKnOHm+ZUuG5X1hcdO4k644bFC/FmIEMk8NYDQ8QeqWILv1DdI0/piFeDYavi94UntW+0DaTe8RT3F/jh52Njs18aAAM209/+JbuEffPbk1V9gB/PkZc2BCRqXA+wwhJyzpXPSUZSp0CMa0idi4r8Idaxz1vLKxXa1MBtSDOzqBO89rNa3whXFd0nzyfNUwm4wtnB3yQIDAQAB",
   "version": "1.0",
   "description": "Save the current webpage to Apple Notes with one click",
   "permissions": [

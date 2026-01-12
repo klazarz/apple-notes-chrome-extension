@@ -10,25 +10,24 @@ A Chrome extension that saves the current webpage to Apple Notes with one click.
 
 ## Installation
 
-### Step 1: Load the Extension in Chrome
+### Step 1: Install the Native Messaging Host
+
+Open Terminal and run:
+
+```bash
+cd /path/to/apple-notes-chrome-extension
+chmod +x install.sh
+./install.sh
+```
+
+You'll be prompted for your password to install the native host to `/usr/local/bin`.
+
+### Step 2: Load the Extension in Chrome
 
 1. Open Chrome and navigate to `chrome://extensions`
 2. Enable **Developer mode** (toggle in the top right corner)
 3. Click **Load unpacked**
 4. Select the `apple-notes-chrome-extension` folder
-5. **Copy the Extension ID** displayed under the extension name (you'll need this for Step 2)
-
-### Step 2: Install the Native Messaging Host
-
-Open Terminal and run:
-
-```bash
-cd ~/apple-notes-chrome-extension
-chmod +x install.sh
-./install.sh YOUR_EXTENSION_ID
-```
-
-Replace `YOUR_EXTENSION_ID` with the ID you copied in Step 1.
 
 ### Step 3: Grant Permissions
 
@@ -54,17 +53,22 @@ Chrome Extension → Native Messaging → Python Script → AppleScript → Appl
 
 ### "Error: Native host has exited"
 
-Make sure you ran the install script with your extension ID:
+This usually means the native host isn't installed correctly. Re-run the install script:
 ```bash
-./install.sh YOUR_EXTENSION_ID
+./install.sh
+```
+
+If the error persists, verify the native host is installed:
+```bash
+ls -la /usr/local/bin/apple_notes_host.py
+cat ~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.applenotes.chrome.json
 ```
 
 ### "Error: Access not allowed"
 
 You need to grant automation permissions:
-1. Open **System Preferences** → **Security & Privacy** → **Privacy**
-2. Select **Automation** in the sidebar
-3. Find the entry for the Python script and enable Apple Notes
+1. Open **System Settings** → **Privacy & Security** → **Automation**
+2. Find the entry for Python/Terminal and enable Apple Notes
 
 ### Note not appearing in iCloud
 
@@ -75,11 +79,8 @@ The extension tries to create notes in your iCloud account first. If that fails,
 1. Remove the extension from `chrome://extensions`
 2. Delete the native messaging host:
    ```bash
+   sudo rm /usr/local/bin/apple_notes_host.py
    rm ~/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.applenotes.chrome.json
-   ```
-3. Delete the extension folder:
-   ```bash
-   rm -rf ~/apple-notes-chrome-extension
    ```
 
 ## Files
